@@ -1,11 +1,11 @@
 -- SQL-команды для создания таблиц
-CREATE TABLE customers (
+CREATE TABLE IF NOT EXISTS customers (
 	customer_id VARCHAR(10) PRIMARY KEY,
 	company_name VARCHAR(50),
 	contact_name VARCHAR(30)
 );
 
-CREATE TABLE employees (
+CREATE TABLE IF NOT EXISTS employees (
 	employee_id INT PRIMARY KEY,
 	first_name VARCHAR(20),
 	last_name VARCHAR(20),
@@ -14,7 +14,7 @@ CREATE TABLE employees (
 	notes TEXT
 );
 
-CREATE TABLE orders (
+CREATE TABLE IF NOT EXISTS orders (
 	order_id INT PRIMARY KEY,
 	customer_id VARCHAR(10) UNIQUE REFERENCES customers(customer_id),
 	employee_id INT UNIQUE REFERENCES employees(employee_id),
