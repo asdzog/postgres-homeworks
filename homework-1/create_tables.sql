@@ -16,8 +16,8 @@ CREATE TABLE IF NOT EXISTS employees (
 
 CREATE TABLE IF NOT EXISTS orders (
 	order_id INT PRIMARY KEY,
-	customer_id VARCHAR(10) UNIQUE REFERENCES customers(customer_id),
-	employee_id INT UNIQUE REFERENCES employees(employee_id),
+	customer_id VARCHAR(10) REFERENCES customers(customer_id),
+	employee_id INT REFERENCES employees(employee_id),
 	order_date DATE,
 	ship_city VARCHAR(30)
 );
